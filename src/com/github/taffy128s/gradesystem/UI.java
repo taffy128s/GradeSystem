@@ -48,7 +48,7 @@ public class UI {
         }
     }
     
-    private void askForReweight(int[] weights) {
+    private void askForReweight(double[] weights) {
         System.out.println("以上正確嗎? Y (Yes) 或 N (No)");
         System.out.print(">> ");
         if (scanner.hasNextLine()) {
@@ -59,18 +59,28 @@ public class UI {
         } else System.out.println("取消更改。");
     }
     
+    private boolean checkValidWeights(double[] weights) {
+        double temp = 0;
+        for (int i = 0; i < weights.length; i++)
+            temp += weights[i];
+        if (temp == 1) return true;
+        else return false;
+    }
+    
     private void tryToReweight() {
         showPresentWeights();
         System.out.println("輸入新配分");
         try {
-            int[] weights = new int[Record.mColumnNum];
+            double[] weights = new double[Record.mColumnNum];
             for (int i = 0; i < Record.mColumnNum; i++) {
                 System.out.print("    " + Record.mColumnNames[i] + " ");
-                weights[i] = scanner.nextInt();
+                weights[i] = scanner.nextDouble() / 100;
             }
             scanner.nextLine();
-            showTempWeights(weights);
-            askForReweight(weights);
+            if (checkValidWeights(weights)) {
+                showTempWeights(weights);
+                askForReweight(weights);
+            } else System.out.println("和必須是100。");
         } catch (InputMismatchException e) {
             System.out.println("請輸入合法數字。");
             scanner.nextLine();
@@ -79,17 +89,17 @@ public class UI {
         }
     }
     
-    private void showTempWeights(int[] weights) {
+    private void showTempWeights(double[] weights) {
         System.out.println("請確認新配分");
         for (int i = 0; i < Record.mColumnNum; i++)
-            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
+            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] * 100 + "%");
     }
     
     private void showPresentWeights() {
         System.out.println("舊配分");
-        int[] weights = rm.getWeights();
+        double[] weights = rm.getWeights();
         for (int i = 0; i < Record.mColumnNum; i++)
-            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
+            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] * 100 + "%");
     }
     
     private void showAverages() {

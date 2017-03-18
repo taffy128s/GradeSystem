@@ -6,7 +6,7 @@ public class Record {
     public static final String[] mColumnNames = {"lab1", "lab2", "lab3", "mid-term", "final exam"};
     private String mID, mName;
     private int[] mScores;
-    private int mWeightedScore;
+    private double mWeightedScore;
     
     public Record(String id, String name, int[] scores) {
         mID = id;
@@ -27,22 +27,23 @@ public class Record {
         return mScores;
     }
     
-    public int getWeightedScore() {
+    public double getWeightedScore() {
         return mWeightedScore;
     }
     
-    public void reweight(int[] weights) {
-        int temp = 0;
+    public void reweight(double[] weights) {
+        double temp = 0;
         for (int i = 0; i < mColumnNum; i++)
-            temp += mScores[i] * weights[i];
-        mWeightedScore = temp / 100;
+            temp += weights[i] * (double) mScores[i];
+        mWeightedScore = temp;
     }
     
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(mName + "成績：\n");
         for (int i = 0; i < mColumnNum; i++)
-            stringBuilder.append("    " + mColumnNames[i] + ": " + Integer.toString(mScores[i]) + "\n");
+            if (mScores[i] < 60) stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "*\n");
+            else stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "\n");
         stringBuilder.append("    total grade: " + mWeightedScore);
         return stringBuilder.toString();
     }

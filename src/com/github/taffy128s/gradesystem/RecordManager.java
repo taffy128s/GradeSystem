@@ -9,9 +9,9 @@ import java.util.LinkedList;
 public class RecordManager {
     
     public static final String mFileName = "gradeinput.txt";
-    private static final int[] defaultWeights = {10, 10, 10, 30, 40};
+    private static final double[] defaultWeights = {0.1, 0.1, 0.1, 0.3, 0.4};
     private LinkedList<Record> mList;
-    private int[] mWeights;
+    private double[] mWeights;
     
     public RecordManager() {
         mList = new LinkedList<>();
@@ -44,11 +44,11 @@ public class RecordManager {
         return averages;
     }
     
-    public int[] getWeights() {
+    public double[] getWeights() {
         return mWeights;
     }
     
-    public void reweightAll(int[] weights) {
+    public void reweightAll(double[] weights) {
         mWeights = weights;
         for (Record grade : mList)
             grade.reweight(weights);
