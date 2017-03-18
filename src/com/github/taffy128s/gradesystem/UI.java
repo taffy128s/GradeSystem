@@ -21,7 +21,7 @@ public class UI {
             input = scanner.nextLine();
             if (input.equals("Q")) {
                 System.out.println("程式結束。");
-                System.exit(0);
+                break;
             } else {
                 Record record = rm.getRecord(input);
                 if (record != null) {
@@ -46,35 +46,16 @@ public class UI {
             else System.out.println("未知的指令。");
             showCommand();
         }
-    }
-    
-    private void askForReweight(double[] weights) {
-        System.out.println("以上正確嗎? Y (Yes) 或 N (No)");
-        System.out.print(">> ");
-        if (scanner.hasNextLine()) {
-            if (scanner.nextLine().equals("Y")) {
-                rm.reweightAll(weights);
-                System.out.println("更改成功。");
-            } else System.out.println("取消更改。");
-        } else System.out.println("取消更改。");
-    }
-    
-    private boolean checkValidWeights(double[] weights) {
-        double temp = 0;
-        for (int i = 0; i < weights.length; i++)
-            temp += weights[i];
-        if (temp == 1) return true;
-        else return false;
-    }
+    }   
     
     private void tryToReweight() {
         showPresentWeights();
         System.out.println("輸入新配分");
         try {
-            double[] weights = new double[Record.mColumnNum];
+            int[] weights = new int[Record.mColumnNum];
             for (int i = 0; i < Record.mColumnNum; i++) {
                 System.out.print("    " + Record.mColumnNames[i] + " ");
-                weights[i] = scanner.nextDouble() / 100;
+                weights[i] = scanner.nextInt();
             }
             scanner.nextLine();
             if (checkValidWeights(weights)) {
@@ -89,17 +70,36 @@ public class UI {
         }
     }
     
-    private void showTempWeights(double[] weights) {
+    private void askForReweight(int[] weights) {
+        System.out.println("以上正確嗎? Y (Yes) 或 N (No)");
+        System.out.print(">> ");
+        if (scanner.hasNextLine()) {
+            if (scanner.nextLine().equals("Y")) {
+                rm.reweightAll(weights);
+                System.out.println("更改成功。");
+            } else System.out.println("取消更改。");
+        } else System.out.println("取消更改。");
+    }
+    
+    private boolean checkValidWeights(int[] weights) {
+        int temp = 0;
+        for (int i = 0; i < weights.length; i++)
+            temp += weights[i];
+        if (temp == 100) return true;
+        else return false;
+    }
+    
+    private void showTempWeights(int[] weights) {
         System.out.println("請確認新配分");
         for (int i = 0; i < Record.mColumnNum; i++)
-            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] * 100 + "%");
+            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
     }
     
     private void showPresentWeights() {
         System.out.println("舊配分");
-        double[] weights = rm.getWeights();
+        int[] weights = rm.getWeights();
         for (int i = 0; i < Record.mColumnNum; i++)
-            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] * 100 + "%");
+            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
     }
     
     private void showAverages() {
