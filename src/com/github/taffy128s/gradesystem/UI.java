@@ -41,10 +41,9 @@ public class UI {
             if (input.equals("G")) System.out.println(record);
             else if (input.equals("R")) System.out.println(record.getName() + "排名: " + rm.getRank(record));
             else if (input.equals("A")) showAverages();
-            else if (input.equals("W")) {
-                showWeights();
-                tryToReweight();
-            } else if (input.equals("E")) break;
+            else if (input.equals("W")) tryToReweight();
+            else if (input.equals("E")) break;
+            else System.out.println("未知的指令。");
             showCommand();
         }
     }
@@ -61,14 +60,16 @@ public class UI {
     }
     
     private void tryToReweight() {
+        showPresentWeights();
         System.out.println("輸入新配分");
         try {
             int[] weights = new int[Record.mColumnNum];
             for (int i = 0; i < Record.mColumnNum; i++) {
-                System.out.print(Record.mColumnNames[i] + " ");
+                System.out.print("    " + Record.mColumnNames[i] + " ");
                 weights[i] = scanner.nextInt();
             }
             scanner.nextLine();
+            showTempWeights(weights);
             askForReweight(weights);
         } catch (InputMismatchException e) {
             System.out.println("請輸入合法數字。");
@@ -78,7 +79,13 @@ public class UI {
         }
     }
     
-    private void showWeights() {
+    private void showTempWeights(int[] weights) {
+        System.out.println("請確認新配分");
+        for (int i = 0; i < Record.mColumnNum; i++)
+            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
+    }
+    
+    private void showPresentWeights() {
         System.out.println("舊配分");
         int[] weights = rm.getWeights();
         for (int i = 0; i < Record.mColumnNum; i++)
