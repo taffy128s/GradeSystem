@@ -3,7 +3,7 @@
  * 
  * Bugs: none known.
  * 
- * @author Taffy Cheng
+ * @author  Taffy Cheng
  */
 package com.github.taffy128s.gradesystem;
 
@@ -100,7 +100,7 @@ public class UI {
      * 7. catches NoSuchElementException, show "EOF detected".
      * 
      * Complexity:
-     * it may spend O(n) to update the score weights in method askForReweight.
+     * it spends O(n) to update the score weights in method askForReweight.
      */
     private void tryToReweight() {
         showPresentWeights();
@@ -224,7 +224,15 @@ public class UI {
         for (int i = 0; i < Record.mColumnNum; i++)
             System.out.println("    " + Record.mColumnNames[i] + "平均: " + averages[i]);
     }
-    
+    /**
+     * Method showCommand: show the valid commands.
+     * 
+     * Pseudo code:
+     * 1. print all of the valid commands.
+     * 
+     * Complexity:
+     * O(1).
+     */
     private void showCommand() {
         System.out.print("輸入指令 ");
         System.out.println("1) G 顯示成績 (Grade)");
