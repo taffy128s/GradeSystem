@@ -9,12 +9,14 @@ import java.util.LinkedList;
 public class RecordManager {
     
     public static final String mFileName = "gradeinput.txt";
+    private static final int[] defaultWeights = {10, 10, 10, 30, 40};
     private LinkedList<Record> mList;
     private int[] mWeights;
     
     public RecordManager() {
         mList = new LinkedList<>();
         loadRecords();
+        reweightAll(defaultWeights);
     }
     
     public Record getRecord(String id) {
@@ -61,7 +63,6 @@ public class RecordManager {
                 String[] tokens = line.split(" ");
                 loadSingleRecord(tokens);
             }
-            reweightAll(new int[] {10, 10, 10, 30, 40});
             br.close();
         } catch (FileNotFoundException e) {
             System.out.println("File not found: " + mFileName);
