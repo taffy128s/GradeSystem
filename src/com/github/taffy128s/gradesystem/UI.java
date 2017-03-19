@@ -146,7 +146,7 @@ public class UI {
                 rm.reweightAll(weights);
                 System.out.println("更改成功。");
             } else System.out.println("取消更改。");
-        } else System.out.println("取消更改。");
+        } else System.out.println("偵測到EOF。");
     }
     
     /**
@@ -219,16 +219,11 @@ public class UI {
      * O(1).
      */
     private void showCommand() {
-        System.out.print("輸入指令 ");
-        System.out.println("1) G 顯示成績 (Grade)");
-        System.out.print("　　　　 ");
-        System.out.println("2) R 顯示排名 (Rank)");
-        System.out.print("　　　　 ");
-        System.out.println("3) A 顯示平均 (Average)");
-        System.out.print("　　　　 ");
-        System.out.println("4) W 更新配分 (Weight)");
-        System.out.print("　　　　 ");
-        System.out.println("5) E 離開選單 (Exit)");
+        System.out.println("輸入指令 1) G 顯示成績 (Grade)");
+        System.out.println("　　　　 2) R 顯示排名 (Rank)");
+        System.out.println("　　　　 3) A 顯示平均 (Average)");
+        System.out.println("　　　　 4) W 更新配分 (Weight)");
+        System.out.println("　　　　 5) E 離開選單 (Exit)");
         System.out.print(">> ");
     }
     
