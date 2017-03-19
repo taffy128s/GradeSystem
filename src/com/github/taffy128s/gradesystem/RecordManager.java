@@ -1,5 +1,5 @@
 /**
- * Class RecordManager: manages the records that stores scores.
+ * Class RecordManager: manage the records that stores scores.
  * 
  * Bugs: none known.
  * 

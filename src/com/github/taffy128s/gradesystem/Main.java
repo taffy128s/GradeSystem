@@ -1,5 +1,5 @@
 /**
- * Class Main: contains program entry point.
+ * Class Main: contain program entry point.
  * 
  * Bugs: none known.
  * 

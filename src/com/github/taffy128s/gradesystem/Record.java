@@ -1,5 +1,5 @@
 /**
- * Class Record: contains the data in a record.
+ * Class Record: contain the data in a record.
  * 
  * Bugs: none known.
  * 

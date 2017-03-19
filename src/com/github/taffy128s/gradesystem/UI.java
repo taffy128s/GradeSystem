@@ -1,5 +1,5 @@
 /**
- * Class UI: contains user interface that interact with users.
+ * Class UI: contain user interface that interact with users.
  * 
  * Bugs: none known.
  * 
