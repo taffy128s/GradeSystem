@@ -102,6 +102,9 @@ public class RecordTest {
      * Pseudo code:
      * 1. reweight both the records.
      * 2. check if they are equal to the answers calculated by hand.
+     * 
+     * Complexity:
+     * O(1).
      */
     @Test
     public void reweightTest() {
@@ -123,19 +126,23 @@ public class RecordTest {
      */
     @Test
     public void toStringTest() {
-        int[] scores1 = record1.getScores();
-        String ans1 = record1.getName() + "成績：\n";
-        for (int i = 0; i < Record.mColumnNum; i++)
-            if (scores1[i] < 60) ans1 += "    " + Record.mColumnNames[i] + ": " + scores1[i] + "*\n";
-            else ans1 += "    " + Record.mColumnNames[i] + ": " + scores1[i] + "\n";
-        ans1 += "    total grade: " + record1.getWeightedScore();
+        String ans1 = "";
+        ans1 += "習大大成績：\n";
+        ans1 += "    " + Record.mColumnNames[0] + ": 59*\n";
+        ans1 += "    " + Record.mColumnNames[1] + ": 60\n";
+        ans1 += "    " + Record.mColumnNames[2] + ": 70\n";
+        ans1 += "    " + Record.mColumnNames[3] + ": 80\n";
+        ans1 += "    " + Record.mColumnNames[4] + ": 30*\n";
+        ans1 += "    total grade: -1";
         assertEquals(ans1, record1.toString());
-        int [] scores2 = record2.getScores();
-        String ans2 = record2.getName() + "成績：\n";
-        for (int i = 0; i < Record.mColumnNum; i++)
-            if (scores2[i] < 60) ans2 += "    " + Record.mColumnNames[i] + ": " + scores2[i] + "*\n";
-            else ans2 += "    " + Record.mColumnNames[i] + ": " + scores2[i] + "\n";
-        ans2 += "    total grade: " + record1.getWeightedScore();
+        String ans2 = "";
+        ans2 += "金胖子成績：\n";
+        ans2 += "    " + Record.mColumnNames[0] + ": 40*\n";
+        ans2 += "    " + Record.mColumnNames[1] + ": 25*\n";
+        ans2 += "    " + Record.mColumnNames[2] + ": 58*\n";
+        ans2 += "    " + Record.mColumnNames[3] + ": 99\n";
+        ans2 += "    " + Record.mColumnNames[4] + ": 66\n";
+        ans2 += "    total grade: -1";
         assertEquals(ans2, record2.toString());
     }
     
