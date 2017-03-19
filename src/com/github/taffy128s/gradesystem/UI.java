@@ -94,7 +94,7 @@ public class UI {
      * 1. show present weights.
      * 2. let the user key in five new weights.
      * 3. flush the scanner.
-     * 4. check if the weights are valid, then call showTempWeights, askForReweight if so.
+     * 4. check if the weights are valid, then call showWeights, askForReweight if so.
      * 5. if not, print error message "sum must be 100".
      * 6. catches InputMismatchException, show "please input valid number" and flush scanner.
      * 7. catches NoSuchElementException, show "EOF detected".
@@ -103,7 +103,7 @@ public class UI {
      * it spends O(n) to update the score weights in method askForReweight.
      */
     private void tryToReweight() {
-        showPresentWeights();
+        showWeights(rm.getWeights(), "舊配分");
         System.out.println("輸入新配分");
         try {
             int[] weights = new int[Record.mColumnNum];
@@ -113,7 +113,7 @@ public class UI {
             }
             scanner.nextLine();
             if (checkValidWeights(weights)) {
-                showTempWeights(weights);
+                showWeights(weights, "請確認新配分");
                 askForReweight(weights);
             } else System.out.println("和必須是100。");
         } catch (InputMismatchException e) {
@@ -172,37 +172,21 @@ public class UI {
     }
     
     /**
-     * Method showTempWeights: show temporary weights from user.
+     * Method showWeights: show the given weights, and the header string.
      * 
-     * @param weights: the temporary weights of scores.
-     * 
-     * Pseudo code:
-     * 1. print "please confirm the new weights."
-     * 2. show the column names and its temporary weights.
-     * 
-     * Complexity:
-     * O(1) to show all of these messages.
-     */
-    private void showTempWeights(int[] weights) {
-        System.out.println("請確認新配分");
-        for (int i = 0; i < Record.mColumnNum; i++)
-            System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
-    }
-    
-    /**
-     * Method showPresentWeights: show the present weights of scores.
+     * @param weights: weights to show.
+     * @param header: header string to show.
      * 
      * Pseudo code:
-     * 1. print "old weights".
-     * 2. get the weights from RecordManager.
-     * 3. show the column names and its present weights.
+     * 1. print the header string.
+     * 2. loop over the weights.
+     * 3. show the column names and the weights.
      * 
      * Complexity:
-     * O(1) to get weights and show them.
+     * O(1) because Record.mColumnNum is constant.
      */
-    private void showPresentWeights() {
-        System.out.println("舊配分");
-        int[] weights = rm.getWeights();
+    private void showWeights(int[] weights, String header) {
+        System.out.println(header);
         for (int i = 0; i < Record.mColumnNum; i++)
             System.out.println("    " + Record.mColumnNames[i] + " " + weights[i] + "%");
     }
@@ -224,6 +208,7 @@ public class UI {
         for (int i = 0; i < Record.mColumnNum; i++)
             System.out.println("    " + Record.mColumnNames[i] + "平均: " + averages[i]);
     }
+    
     /**
      * Method showCommand: show the valid commands.
      * 
