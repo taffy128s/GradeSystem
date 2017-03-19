@@ -16,7 +16,7 @@ import java.util.LinkedList;
 public class RecordManager {
     
     public static final String mFileName = "gradeinput.txt";
-    private static final int[] defaultWeights = {10, 10, 10, 30, 40};
+    public static final int[] defaultWeights = {10, 10, 10, 30, 40};
     private LinkedList<Record> mList;
     private int[] mWeights;
     

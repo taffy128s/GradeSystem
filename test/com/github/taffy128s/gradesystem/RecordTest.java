@@ -1,9 +1,9 @@
 /**
- * Class RecordTest: test Class Record.
+ * Class RecordTest: test Class Record, two tests every method.
  * 
  * Bugs: none known.
  * 
- * @author Taffy Cheng
+ * @author  Taffy Cheng
  */
 package com.github.taffy128s.gradesystem;
 
