@@ -127,21 +127,21 @@ public class RecordTest {
     @Test
     public void toStringTest() {
         String ans1 = "";
-        ans1 += "習大大成績：\n";
-        ans1 += "    " + Record.mColumnNames[0] + ": 59*\n";
-        ans1 += "    " + Record.mColumnNames[1] + ": 60\n";
-        ans1 += "    " + Record.mColumnNames[2] + ": 70\n";
-        ans1 += "    " + Record.mColumnNames[3] + ": 80\n";
-        ans1 += "    " + Record.mColumnNames[4] + ": 30*\n";
+        ans1 += "習大大成績：\r\n";
+        ans1 += "    " + Record.mColumnNames[0] + ": 59*\r\n";
+        ans1 += "    " + Record.mColumnNames[1] + ": 60\r\n";
+        ans1 += "    " + Record.mColumnNames[2] + ": 70\r\n";
+        ans1 += "    " + Record.mColumnNames[3] + ": 80\r\n";
+        ans1 += "    " + Record.mColumnNames[4] + ": 30*\r\n";
         ans1 += "    total grade: -1";
         assertEquals(ans1, record1.toString());
         String ans2 = "";
-        ans2 += "金胖子成績：\n";
-        ans2 += "    " + Record.mColumnNames[0] + ": 40*\n";
-        ans2 += "    " + Record.mColumnNames[1] + ": 25*\n";
-        ans2 += "    " + Record.mColumnNames[2] + ": 58*\n";
-        ans2 += "    " + Record.mColumnNames[3] + ": 99\n";
-        ans2 += "    " + Record.mColumnNames[4] + ": 66\n";
+        ans2 += "金胖子成績：\r\n";
+        ans2 += "    " + Record.mColumnNames[0] + ": 40*\r\n";
+        ans2 += "    " + Record.mColumnNames[1] + ": 25*\r\n";
+        ans2 += "    " + Record.mColumnNames[2] + ": 58*\r\n";
+        ans2 += "    " + Record.mColumnNames[3] + ": 99\r\n";
+        ans2 += "    " + Record.mColumnNames[4] + ": 66\r\n";
         ans2 += "    total grade: -1";
         assertEquals(ans2, record2.toString());
     }

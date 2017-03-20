@@ -125,10 +125,10 @@ public class Record {
      */
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(mName + "成績：\n");
+        stringBuilder.append(mName + "成績：\r\n");
         for (int i = 0; i < mColumnNum; i++)
-            if (mScores[i] < 60) stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "*\n");
-            else stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "\n");
+            if (mScores[i] < 60) stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "*\r\n");
+            else stringBuilder.append("    " + mColumnNames[i] + ": " + mScores[i] + "\r\n");
         stringBuilder.append("    total grade: " + mWeightedScore);
         return stringBuilder.toString();
     }

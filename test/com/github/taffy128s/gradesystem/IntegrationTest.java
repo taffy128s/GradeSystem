@@ -48,32 +48,32 @@ public class IntegrationTest {
      */
     @Test
     public void showGradeTest() {
-        System.setIn(new ByteArrayInputStream("975002039\nG\nE\nQ\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("975002039\r\nG\r\nE\r\nQ\r\n".getBytes()));
         UI ui1 = new UI();
         ui1.promptID();
         String expected = "";
-        expected += "輸入ID或Q: Welcome 許琇筑.\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "輸入ID或Q: Welcome 許琇筑.\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
-        expected += "許琇筑成績：\n";
-        expected += "    lab1: 97\n";
-        expected += "    lab2: 84\n";
-        expected += "    lab3: 87\n";
-        expected += "    mid-term: 99\n";
-        expected += "    final exam: 89\n";
-        expected += "    total grade: 92\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "許琇筑成績：\r\n";
+        expected += "    lab1: 97\r\n";
+        expected += "    lab2: 84\r\n";
+        expected += "    lab3: 87\r\n";
+        expected += "    mid-term: 99\r\n";
+        expected += "    final exam: 89\r\n";
+        expected += "    total grade: 92\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
         expected += "輸入ID或Q: ";
-        expected += "程式結束。\n";
+        expected += "程式結束。\r\n";
         assertEquals(expected, outContent.toString());
     }
     
@@ -89,101 +89,121 @@ public class IntegrationTest {
      */
     @Test
     public void showRankTest() {
-        System.setIn(new ByteArrayInputStream("975002039\nR\nE\nQ\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("975002039\r\nR\r\nE\r\nQ\r\n".getBytes()));
         UI ui1 = new UI();
         ui1.promptID();
         String expected = "";
-        expected += "輸入ID或Q: Welcome 許琇筑.\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "輸入ID或Q: Welcome 許琇筑.\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
-        expected += "許琇筑排名: 10\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "許琇筑排名: 10\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
         expected += "輸入ID或Q: ";
-        expected += "程式結束。\n";
+        expected += "程式結束。\r\n";
         assertEquals(expected, outContent.toString());
     }
     
+    /**
+     * Method showAvergeTest: test main function "show average".
+     * 
+     * Pseudo code:
+     * 1. give the specified input.
+     * 2. check if the output matches the answer written by hand.
+     * 
+     * Complexity:
+     * O(n).
+     */
     @Test
     public void showAverageTest() {
-        System.setIn(new ByteArrayInputStream("975002039\nA\nE\nQ\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("975002039\r\nA\r\nE\r\nQ\r\n".getBytes()));
         UI ui1 = new UI();
         ui1.promptID();
         String expected = "";
-        expected += "輸入ID或Q: Welcome 許琇筑.\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "輸入ID或Q: Welcome 許琇筑.\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
-        expected += "各項成績平均：\n";
-        expected += "    lab1平均: 90\n";
-        expected += "    lab2平均: 87\n";
-        expected += "    lab3平均: 89\n";
-        expected += "    mid-term平均: 89\n";
-        expected += "    final exam平均: 89\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "各項成績平均：\r\n";
+        expected += "    lab1平均: 90\r\n";
+        expected += "    lab2平均: 87\r\n";
+        expected += "    lab3平均: 89\r\n";
+        expected += "    mid-term平均: 89\r\n";
+        expected += "    final exam平均: 89\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
         expected += "輸入ID或Q: ";
-        expected += "程式結束。\n";
+        expected += "程式結束。\r\n";
         assertEquals(expected, outContent.toString());
     }
     
+    /**
+     * Method reweightTest: test main function "reweight".
+     * 
+     * Pseudo code:
+     * 1. give the specified input.
+     * 2. check if the output matches the answer written by hand.
+     * 
+     * Complexity:
+     * O(n).
+     */
     @Test
     public void reweightTest() {
-        System.setIn(new ByteArrayInputStream("975002039\nW\n20\n20\n20\n20\n20\nY\nE\nQ\n".getBytes()));
+        System.setIn(new ByteArrayInputStream("975002039\r\nW\r\n20\r\n20\r\n20\r\n20\r\n20\r\nY\r\nE\r\nQ\r\n".getBytes()));
         UI ui1 = new UI();
         ui1.promptID();
         String expected = "";
-        expected += "輸入ID或Q: Welcome 許琇筑.\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "輸入ID或Q: Welcome 許琇筑.\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
-        expected += "舊配分\n";
-        expected += "    lab1 10%\n";
-        expected += "    lab2 10%\n";
-        expected += "    lab3 10%\n";
-        expected += "    mid-term 30%\n";
-        expected += "    final exam 40%\n";
-        expected += "輸入新配分\n";
+        expected += "舊配分\r\n";
+        expected += "    lab1 10%\r\n";
+        expected += "    lab2 10%\r\n";
+        expected += "    lab3 10%\r\n";
+        expected += "    mid-term 30%\r\n";
+        expected += "    final exam 40%\r\n";
+        expected += "輸入新配分\r\n";
         expected += "    lab1 ";
         expected += "    lab2 ";
         expected += "    lab3 ";
         expected += "    mid-term ";
         expected += "    final exam ";
-        expected += "請確認新配分\n";
-        expected += "    lab1 20%\n";
-        expected += "    lab2 20%\n";
-        expected += "    lab3 20%\n";
-        expected += "    mid-term 20%\n";
-        expected += "    final exam 20%\n";
-        expected += "以上正確嗎? Y (Yes) 或 N (No)\n";
+        expected += "請確認新配分\r\n";
+        expected += "    lab1 20%\r\n";
+        expected += "    lab2 20%\r\n";
+        expected += "    lab3 20%\r\n";
+        expected += "    mid-term 20%\r\n";
+        expected += "    final exam 20%\r\n";
+        expected += "以上正確嗎? Y (Yes) 或 N (No)\r\n";
         expected += ">> ";
-        expected += "更改成功。\n";
-        expected += "輸入指令 1) G 顯示成績 (Grade)\n";
-        expected += "　　　　 2) R 顯示排名 (Rank)\n";
-        expected += "　　　　 3) A 顯示平均 (Average)\n";
-        expected += "　　　　 4) W 更新配分 (Weight)\n";
-        expected += "　　　　 5) E 離開選單 (Exit)\n";
+        expected += "更改成功。\r\n";
+        expected += "輸入指令 1) G 顯示成績 (Grade)\r\n";
+        expected += "　　　　 2) R 顯示排名 (Rank)\r\n";
+        expected += "　　　　 3) A 顯示平均 (Average)\r\n";
+        expected += "　　　　 4) W 更新配分 (Weight)\r\n";
+        expected += "　　　　 5) E 離開選單 (Exit)\r\n";
         expected += ">> ";
         expected += "輸入ID或Q: ";
-        expected += "程式結束。\n";
+        expected += "程式結束。\r\n";
         assertEquals(expected, outContent.toString());
     }
 
