@@ -54,10 +54,10 @@ public class UITest {
         ui1.promptID();
         assertEquals("輸入ID或Q: 程式結束。\r\n", outContent.toString());
         outContent.reset();
-        System.setIn(new ByteArrayInputStream("94879487".getBytes()));
+        System.setIn(new ByteArrayInputStream("94879487\r\nQ".getBytes()));
         UI ui2 = new UI();
         ui2.promptID();
-        assertEquals("輸入ID或Q: ID不存在。\r\n輸入ID或Q: ", outContent.toString());
+        assertEquals("輸入ID或Q: ID不存在。\r\n輸入ID或Q: 程式結束。\r\n", outContent.toString());
         outContent.reset();
     }
     
