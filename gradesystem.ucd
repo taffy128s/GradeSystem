@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="gradesystem" size="1181,665" id="com.github.taffy128s.gradesystem" metadata="uml2-1.0" initialized="true" tag="10" key="32303037303533312D313020477261646553797374656D">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.1 //@children.2/@sourceConnections.0" name="Record" location="603,197" size="183,211" id="com.github.taffy128s.gradesystem/Record">
+    <children xsi:type="editmodel:CompartmentEditModel" size="160,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="mColumnNames" id="com.github.taffy128s.gradesystem/Record#mColumnNames"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mColumnNum" id="com.github.taffy128s.gradesystem/Record#mColumnNum"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="119,126">
+      <children xsi:type="editmodel:MethodEditModel" name="Record" id="com.github.taffy128s.gradesystem/Record#Record(Ljava.lang.String;Ljava.lang.String;[I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getID" id="com.github.taffy128s.gradesystem/Record#getID()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getName" id="com.github.taffy128s.gradesystem/Record#getName()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getScores" id="com.github.taffy128s.gradesystem/Record#getScores()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeightedScore" id="com.github.taffy128s.gradesystem/Record#getWeightedScore()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reweight" id="com.github.taffy128s.gradesystem/Record#reweight([I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="com.github.taffy128s.gradesystem/Record#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="Main" location="50,50" size="75,67" id="com.github.taffy128s.gradesystem/Main">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="52,18">
+      <children xsi:type="editmodel:MethodEditModel" name="main" id="com.github.taffy128s.gradesystem/Main#main([Ljava.lang.String;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.github.taffy128s.gradesystem/Main->com.github.taffy128s.gradesystem/UI*com.github.taffy128s.gradesystem/Main->com.github.taffy128s.gradesystem/UI*com.github.taffy128s.gradesystem/Main-Soyatec::Import->com.github.taffy128s.gradesystem/UI" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.0/@children.2" label="//@children.1/@sourceConnections.0/@children.0" sourceEnd="//@children.1/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="75,55" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,13"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.3/@sourceConnections.0" name="RecordManager" location="459,450" size="162,193" id="com.github.taffy128s.gradesystem/RecordManager">
+    <children xsi:type="editmodel:CompartmentEditModel" size="139,36">
+      <children xsi:type="editmodel:AttributeEditModel" name="defaultWeights" id="com.github.taffy128s.gradesystem/RecordManager#defaultWeights"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="mFileName" id="com.github.taffy128s.gradesystem/RecordManager#mFileName"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="107,108">
+      <children xsi:type="editmodel:MethodEditModel" name="RecordManager" id="com.github.taffy128s.gradesystem/RecordManager#RecordManager()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAverages" id="com.github.taffy128s.gradesystem/RecordManager#getAverages()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRank" id="com.github.taffy128s.gradesystem/RecordManager#getRank(Lcom.github.taffy128s.gradesystem.Record;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getRecord" id="com.github.taffy128s.gradesystem/RecordManager#getRecord(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getWeights" id="com.github.taffy128s.gradesystem/RecordManager#getWeights()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="reweightAll" id="com.github.taffy128s.gradesystem/RecordManager#reweightAll([I)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager-Soyatec::Import->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/RecordManager->com.github.taffy128s.gradesystem/Record" source="//@children.2" target="//@children.0" targetEnd="//@children.2/@sourceConnections.0/@children.2" label="//@children.2/@sourceConnections.0/@children.0" sourceEnd="//@children.2/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="152,0" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="8,211"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.0" name="UI" location="308,197" size="133,103" id="com.github.taffy128s.gradesystem/UI">
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="110,54">
+      <children xsi:type="editmodel:MethodEditModel" name="UI" id="com.github.taffy128s.gradesystem/UI#UI()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptCommand" id="com.github.taffy128s.gradesystem/UI#promptCommand(Lcom.github.taffy128s.gradesystem.Record;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="promptID" id="com.github.taffy128s.gradesystem/UI#promptID()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI-Soyatec::Import->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/RecordManager" source="//@children.3" target="//@children.2" targetEnd="//@children.3/@sourceConnections.0/@children.2" label="//@children.3/@sourceConnections.0/@children.0" sourceEnd="//@children.3/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import»" size="41,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="95,103" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="28,0"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/UI-Soyatec::Access->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/UI-Soyatec::Import->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/Record*com.github.taffy128s.gradesystem/UI->com.github.taffy128s.gradesystem/Record" source="//@children.3" target="//@children.0" targetEnd="//@children.3/@sourceConnections.1/@children.2" label="//@children.3/@sourceConnections.1/@children.0" sourceEnd="//@children.3/@sourceConnections.1/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Access, Import»" size="85,14" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="133,51" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,51"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>
